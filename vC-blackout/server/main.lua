@@ -32,17 +32,6 @@ RegisterCommand('resetblackout', function(source)
 end)
 
 
-QBCore.Functions.CreateCallback('np-blackout:checkItem', function(source,cb)
-    local Player = QBCore.Functions.GetPlayer(source)
-    local item = Player.Functions.GetItemByName('weapon_stickybomb')
-    if item ~= nil then
-        cb(true)
-    else
-        cb(false)
-    end
-
-end)
-
 
 RegisterServerEvent('np-blackout:setTimeout', function()
     SetTimeout()
