@@ -15,3 +15,7 @@ Config.ExplosionLocations = {
 
 
 Config.BombSite = vector3(711.45, 164.96, 80.75)
+
+RegisterNetEvent('vC-blackout:dispatch, function()
+       --- Your Dispatch Event Here
+end)
