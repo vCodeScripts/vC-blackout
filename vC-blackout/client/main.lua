@@ -11,6 +11,7 @@ RegisterNetEvent('np-blackout:setlightBool', function(bool)
     else
         PlaySoundFrontend(-1, "Power_Down", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
         TriggerEvent('chatMessage', "LS Water & Power", "warning", "City power is currently out, we're working on restoring it!")
+	TriggerEvent('vC-blackout:dispatch')
     end
 
 end)
