@@ -15,7 +15,7 @@ Config.ExplosionLocations = {
 
 
 Config.BombSite = vector3(711.45, 164.96, 80.75)
-
+Config.NeededPerm = 'god' -- Needed Perm For The resetblackout command
 RegisterNetEvent('vC-blackout:dispatch', function()
        --- Your Dispatch Event Here
 end)
