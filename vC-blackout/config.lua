@@ -1,7 +1,7 @@
 Config = {}
 
 -- Time Option (Don't Forget Everything is in minutes)
-Config.TimeUntilLightsAreBackUp = 15 -- 15 minutes
+
 Config.Cooldown = 60 -- 1 Hour (60 Minutes)
 Config.Minutes = 5 -- How Much Time It Should Take Before A Police Can Restore The Electr
 
