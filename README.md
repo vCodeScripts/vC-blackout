@@ -6,3 +6,4 @@ Reference to the code in qb weathersync: https://prnt.sc/UpMiKBTG3BLJ
 
 
 A video: https://streamable.com/jjsgcn
+This script is a must have resource, to be able to use our cokemission script.
