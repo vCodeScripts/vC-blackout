@@ -5,6 +5,8 @@ Config = {}
 
 Config.Minutes = 5 -- How Much Time It Should Take Before A Police Officer Can Try Again To Restore Electricity.
 
+Config.PlaySound = true -- Plays Sounds When Electricity Is Restored Or When A Blackout Happens.
+
 Config.ExplosionLocations = {
     vector3(691.5399, 158.6379, 84.171),
     vector3(673.8968, 148.2013, 83.555),
