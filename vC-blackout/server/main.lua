@@ -19,7 +19,7 @@ QBCore.Functions.CreateCallback('vC-blackout:checkifPossible', function(source,c
     end
 end)
 
-exports('elektriklerKesik', function()
+exports('getBlackout', function()
     return PowerOff 
 end)
 
