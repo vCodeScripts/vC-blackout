@@ -1,7 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 
-RegisterNetEvent('np-blackout:setlightBool', function(bool)
+RegisterNetEvent('vC-blackout:setlightBool', function(bool)
     SetArtificialLightsState(bool)
     SetBlackout(bool)
     if not bool then
@@ -16,14 +16,14 @@ RegisterNetEvent('np-blackout:setlightBool', function(bool)
 
 end)
 
-exports['qb-target']:AddBoxZone("np-blackout", vector3(712, 165.440, 80.754), 1.3, 0.35, {
-	name = "np-blackout",
+exports['qb-target']:AddBoxZone("vC-blackout", vector3(712, 165.440, 80.754), 1.3, 0.35, {
+	name = "vC-blackout",
 	heading = 71.0,
 	debugPoly = false,
 }, {
 	options = {
         {
-            event = "np-blackout:police",
+            event = "vC-blackout:police",
 			icon = "fa-solid fa-plug",
 			label = "Restore Electricity",
             job = "police", 
@@ -32,7 +32,7 @@ exports['qb-target']:AddBoxZone("np-blackout", vector3(712, 165.440, 80.754), 1.
 	distance = 2.5
 })
 
-RegisterNetEvent('np-blackout:checkifblackoutcausable', function(vector)
+RegisterNetEvent('vC-blackout:checkifblackoutcausable', function(vector)
     local distance = GetDistanceBetweenCoords(Config.BombSite,vector, true )
     if distance < 3 then 
         ChainReaction()
@@ -42,23 +42,23 @@ RegisterNetEvent('np-blackout:checkifblackoutcausable', function(vector)
 end)
 
 
-RegisterNetEvent("np-blackout:police", function()
+RegisterNetEvent("vC-blackout:police", function()
     local PlayerData = QBCore.Functions.GetPlayerData()
     if PlayerData.job.name ~= nil and PlayerData.job.name == "police" then
-        QBCore.Functions.TriggerCallback('np-blackout:checkifPossible', function(possible)
+        QBCore.Functions.TriggerCallback('vC-blackout:checkifPossible', function(possible)
             if not possible then
-                QBCore.Functions.TriggerCallback('np-blackout:getTimeout', function(possible)
+                QBCore.Functions.TriggerCallback('vC-blackout:getTimeout', function(possible)
                     if not possible then
                         exports["memorygame"]:thermiteminigame(10, 3, 3, 10,
                             function() -- success
                                 ClearPedTasksImmediately(PlayerPedId())    
-                                TriggerServerEvent('np-blackout:server:setLightStateForEveryone',false)
+                                TriggerServerEvent('vC-blackout:server:setLightStateForEveryone',false)
                             end,
                             function() -- failure
                                 ClearPedTasksImmediately(PlayerPedId()) 
                                 TriggerEvent('chatMessage', "SYSTEM", "warning", "You Couldn't Restore Electricity. The System Is Restarting. The System Restart Will Take "..Config.Minutes.." Minutes.")
                                 --- 
-                                TriggerServerEvent('np-blackout:setTimeout')
+                                TriggerServerEvent('vC-blackout:setTimeout')
 
                         end)
                     else
@@ -85,5 +85,5 @@ function ChainReaction()
         Citizen.Wait(300)
         AddExplosion(Config.ExplosionLocations[i],34, 20.0, true, false, 1.0, true)
     end
-    TriggerServerEvent('np-blackout:server:setLightStateForEveryone', true)
+    TriggerServerEvent('vC-blackout:server:setLightStateForEveryone', true)
 end
