@@ -1,8 +1,8 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local Cooldown = false
 local PowerOff = false
-RegisterServerEvent('np-blackout:server:setLightStateForEveryone', function(state)
-    TriggerClientEvent('np-blackout:setlightBool', -1, state)
+RegisterServerEvent('vC-blackout:server:setLightStateForEveryone', function(state)
+    TriggerClientEvent('vC-blackout:setlightBool', -1, state)
     if state then
         PowerOff = true
     else
@@ -10,7 +10,7 @@ RegisterServerEvent('np-blackout:server:setLightStateForEveryone', function(stat
     end
 end)
 
-QBCore.Functions.CreateCallback('np-blackout:checkifPossible', function(source,cb)
+QBCore.Functions.CreateCallback('vC-blackout:checkifPossible', function(source,cb)
 
     if not Cooldown and not PowerOff then
         cb(true)
@@ -27,13 +27,13 @@ RegisterCommand('resetblackout', function(source)
     local src= source
     local hasPerm = QBCore.Functions.HasPermission(src, 'god')
     if hasPerm then
-        TriggerEvent('np-blackout:server:setLightStateForEveryone',false)
+        TriggerEvent('vC-blackout:server:setLightStateForEveryone',false)
     end
 end)
 
 
 
-RegisterServerEvent('np-blackout:setTimeout', function()
+RegisterServerEvent('vC-blackout:setTimeout', function()
     SetTimeout()
 end)
 
@@ -52,10 +52,10 @@ end
 AddEventHandler('explosionEvent', function(sender, ev)
     print(sender, json.encode(ev))
     local vector = vector3(ev.posX, ev.posY, ev.posZ)
-    TriggerClientEvent('np-blackout:checkifblackoutcausable', sender, vector)
+    TriggerClientEvent('vC-blackout:checkifblackoutcausable', sender, vector)
 end)
 
-QBCore.Functions.CreateCallback('np-blackout:getTimeout', function(source,cb)
+QBCore.Functions.CreateCallback('vC-blackout:getTimeout', function(source,cb)
     print(timeout)
     cb(timeout)
 
