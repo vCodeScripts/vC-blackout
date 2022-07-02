@@ -5,11 +5,15 @@ RegisterNetEvent('vC-blackout:setlightBool', function(bool)
     SetArtificialLightsState(bool)
     SetBlackout(bool)
     if not bool then
-        PlaySoundFrontend(-1, "police_notification", "DLC_AS_VNT_Sounds", 1)
+	if Config.PlaySound then
+        	PlaySoundFrontend(-1, "police_notification", "DLC_AS_VNT_Sounds", 1)
+	end
         TriggerEvent('chatMessage', "LS Water & Power", "warning", "The power and electricity have both been restored. LS Water & Power thanks you for your patience.")
 
     else
-        PlaySoundFrontend(-1, "Power_Down", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
+	if Config.PlaySound then
+        	PlaySoundFrontend(-1, "Power_Down", "DLC_HEIST_HACKING_SNAKE_SOUNDS", 1)
+	end
         TriggerEvent('chatMessage', "LS Water & Power", "warning", "City power is currently out, we're working on restoring it!")
 	TriggerEvent('vC-blackout:dispatch')
     end
