@@ -2,8 +2,8 @@ Config = {}
 
 -- Time Option (Don't Forget Everything is in minutes)
 
-Config.Cooldown = 60 -- 1 Hour (60 Minutes)
-Config.Minutes = 5 -- How Much Time It Should Take Before A Police Can Restore The Electr
+
+Config.Minutes = 5 -- How Much Time It Should Take Before A Police Officer Can Try Again To Restore Electricity.
 
 Config.ExplosionLocations = {
     vector3(691.5399, 158.6379, 84.171),
