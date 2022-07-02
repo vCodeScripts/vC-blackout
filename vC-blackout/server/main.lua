@@ -25,7 +25,7 @@ end)
 
 RegisterCommand('resetblackout', function(source)
     local src= source
-    local hasPerm = QBCore.Functions.HasPermission(src, 'god')
+    local hasPerm = QBCore.Functions.HasPermission(src, Config.NeededPerm)
     if hasPerm then
         TriggerEvent('vC-blackout:server:setLightStateForEveryone',false)
     end
