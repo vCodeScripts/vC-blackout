@@ -79,8 +79,8 @@ state = false
 
 Citizen.CreateThread(function()
 	while true do 
-		Citizen.Wait(30000)
-		QBCore.Functions.TriggerCallback('vC-blackout:checkifPossible', function(possible)
+		Citizen.Wait(15000)
+		QBCore.Functions.TriggerCallback('vC-blackout:statee', function(possible)
 			state = possible
 		end)
 	end
