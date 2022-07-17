@@ -37,6 +37,9 @@ RegisterServerEvent('vC-blackout:setTimeout', function()
     SetTimeout()
 end)
 
+QBCore.Functions.CreateCallback('vC-blackout:getState', function(source,cb)
+    cb(PowerOff)
+end)
 
 
 local timeout = false
@@ -50,7 +53,6 @@ function SetTimeout()
 end
 
 AddEventHandler('explosionEvent', function(sender, ev)
-    print(sender, json.encode(ev))
     local vector = vector3(ev.posX, ev.posY, ev.posZ)
     TriggerClientEvent('vC-blackout:checkifblackoutcausable', sender, vector)
 end)
