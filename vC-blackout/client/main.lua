@@ -75,11 +75,21 @@ RegisterNetEvent("vC-blackout:police", function()
         end)
     end
 end)
+state = false 
+
+Citizen.CreateThread(function()
+	while true do 
+		Citizen.Wait(30000)
+		QBCore.Functions.TriggerCallback('vC-blackout:checkifPossible', function(possible)
+			state = possible
+		end)
+	end
+end)
 
 
-
-
-
+exports('BlackoutState', function ()
+		return state
+end)
 
 
 
