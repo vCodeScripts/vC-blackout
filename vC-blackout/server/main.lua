@@ -10,8 +10,11 @@ RegisterServerEvent('vC-blackout:server:setLightStateForEveryone', function(stat
     end
 end)
 
-QBCore.Functions.CreateCallback('vC-blackout:checkifPossible', function(source,cb)
+QBCore.Functions.CreateCallback('vC-blackout:statee', function(source,cb)
+     cb(PowerOff)
+end)
 
+QBCore.Functions.CreateCallback('vC-blackout:checkifPossible', function(source,cb)
     if not Cooldown and not PowerOff then
         cb(true)
     else
