@@ -1,7 +1,7 @@
 # vC-blackout
 Nopixel Inspired Blackout, Easy To Use Drag And Drop Resource [QB-CORE]
 
-vCode Scripts https://github.com/vCodeScripts & https://discord.gg/ePnVpZE6mA
+vCode Scripts https://github.com/vCodeScripts & [https://discord.gg/ePnVpZE6mA](https://discord.gg/BNtGTubF7E)
 
 Special thanks to @utkuali on gitHub, I got the idea for the sounds from there.
 
